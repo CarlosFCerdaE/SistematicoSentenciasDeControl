@@ -5,12 +5,16 @@
  */
 package sentenciascontrol;
 
+import javax.swing.JOptionPane;
+import modelos.MAritmetico;
+
 /**
  *
  * @author Armando J. López L.
  */
 public class Aritmeticos extends javax.swing.JInternalFrame {
 
+    MAritmetico aritmetico = new MAritmetico();
     /**
      * Creates new form Aritmeticos
      */
@@ -83,12 +87,22 @@ public class Aritmeticos extends javax.swing.JInternalFrame {
         lvs1.setText("vs.");
 
         bVerificar1.setText("Verificar");
+        bVerificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVerificar1ActionPerformed(evt);
+            }
+        });
 
         lEjer2.setText("2. Calcular el resultado de la expresión");
 
         lsuma2.setText("+");
 
         bCalcular4.setText("Calcular");
+        bCalcular4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCalcular4ActionPerformed(evt);
+            }
+        });
 
         lresta2.setText("-");
 
@@ -107,6 +121,11 @@ public class Aritmeticos extends javax.swing.JInternalFrame {
         lDiv3.setText("/");
 
         bCalcular3.setText("Calcular");
+        bCalcular3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCalcular3ActionPerformed(evt);
+            }
+        });
 
         lParen31.setText("(");
 
@@ -123,6 +142,11 @@ public class Aritmeticos extends javax.swing.JInternalFrame {
         la4.setText("a=");
 
         bCalcular2.setText("Calcular");
+        bCalcular2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCalcular2ActionPerformed(evt);
+            }
+        });
 
         lEjer5.setText("5. Calcular el resultado de la expresión: x^a * a/b");
 
@@ -131,6 +155,11 @@ public class Aritmeticos extends javax.swing.JInternalFrame {
         la5.setText("a=");
 
         bCalcular5.setText("Calcular");
+        bCalcular5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCalcular5ActionPerformed(evt);
+            }
+        });
 
         lb5.setText("b=");
 
@@ -310,6 +339,79 @@ public class Aritmeticos extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bVerificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVerificar1ActionPerformed
+        // TODO add your handling code here:
+        try{
+        double num1 = Double.parseDouble(tfNum1.getText());
+        double num2 = Double.parseDouble(tfNum2.getText());
+        boolean resp = aritmetico.sonMultiplos(num1, num2);
+        if (resp) JOptionPane.showMessageDialog(this, "Son multiplos",
+                "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        else JOptionPane.showMessageDialog(this, "No son multiplos",
+                "Respuesta", JOptionPane.WARNING_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_bVerificar1ActionPerformed
+
+    private void bCalcular2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular2ActionPerformed
+      try{
+        double num1 = Double.parseDouble(tfNum3.getText());
+        double num2 = Double.parseDouble(tfNum4.getText());
+        double num3 = Double.parseDouble(tfNum5.getText());
+        double num4 = Double.parseDouble(tfNum6.getText());
+        double num5 = Double.parseDouble(tfNum7.getText());
+        double resp = aritmetico.expresion1(num1, num2, num3, num4, num5);
+        JOptionPane.showMessageDialog(this, "El resultado de la expresion es: "+resp,
+                "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }  // TODO add your handling code here:
+    }//GEN-LAST:event_bCalcular2ActionPerformed
+
+    private void bCalcular3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular3ActionPerformed
+        // TODO add your handling code here:
+        try{
+        double num1 = Double.parseDouble(tfNum8.getText());
+        double num2 = Double.parseDouble(tfNum9.getText());
+        double num3 = Double.parseDouble(tfNum10.getText());
+        double num4 = Double.parseDouble(tfNum11.getText());
+        double num5 = Double.parseDouble(tfNum12.getText());
+        double resp = aritmetico.expresion2(num1, num2, num3, num4, num5);
+        JOptionPane.showMessageDialog(this, "El resultado de la expresion es: "+resp,
+                "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_bCalcular3ActionPerformed
+
+    private void bCalcular4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular4ActionPerformed
+        // TODO add your handling code here:
+         try{
+        double num1 = Double.parseDouble(tfNum13.getText());
+        double num2 = Double.parseDouble(tfNum14.getText());
+        double resp = aritmetico.expresion3(num1, num2);
+        JOptionPane.showMessageDialog(this, "El resultado de la expresion es: "+resp,
+                "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_bCalcular4ActionPerformed
+
+    private void bCalcular5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular5ActionPerformed
+        // TODO add your handling code here:
+        try{
+        double num1 = Double.parseDouble(tfNum15.getText());
+        double num2 = Double.parseDouble(tfNum16.getText());
+        double num3 = Double.parseDouble(tfNum17.getText());
+        double resp = aritmetico.expresion4(num1, num2, num3);
+        JOptionPane.showMessageDialog(this, "El resultado de la expresion es: "+resp,
+                "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_bCalcular5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

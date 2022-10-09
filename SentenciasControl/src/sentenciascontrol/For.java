@@ -5,12 +5,16 @@
  */
 package sentenciascontrol;
 
+import javax.swing.JOptionPane;
+import modelos.MFor;
+
 /**
  *
  * @author Armando J. López L.
  */
 public class For extends javax.swing.JInternalFrame {
 
+    MFor fOr = new MFor();
     /**
      * Creates new form For
      */
@@ -214,31 +218,71 @@ public class For extends javax.swing.JInternalFrame {
 
     private void bCalcular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular1ActionPerformed
         try{
-
+           
+            double num1 = Double.parseDouble(tfNum5.getText());
+            double resp = fOr.promedio(num1);
+           JOptionPane.showMessageDialog(this, "El total es "+resp,"Respuesta", JOptionPane.INFORMATION_MESSAGE);
         }
         catch(NumberFormatException ex){
-
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }//GEN-LAST:event_bCalcular1ActionPerformed
 
     private void bCalcular2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular2ActionPerformed
         // TODO add your handling code here:
+        try{
+        double num1 = Double.parseDouble(tfNum2.getText());
+        double num2 = Double.parseDouble(tfNum3.getText());
+        double resp = fOr.DeAaB(num1,num2);
+        JOptionPane.showMessageDialog(this, "El total es "+resp,"Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bCalcular2ActionPerformed
 
     private void bVerificar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVerificar3ActionPerformed
         // TODO add your handling code here:
+        try{
+        double num1 = Double.parseDouble(tfNum4.getText());
+        boolean resp = fOr.esPrimo(num1);
+        if (resp) JOptionPane.showMessageDialog(this, "Es primo",
+                "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        else JOptionPane.showMessageDialog(this, "No es primo",
+                "Respuesta", JOptionPane.WARNING_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bVerificar3ActionPerformed
 
     private void bCalcular3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular3ActionPerformed
         // TODO add your handling code here:
+     try{
+        double num1 = Double.parseDouble(tfNum1.getText());
+        double resp = fOr.De1aN(num1);
+        JOptionPane.showMessageDialog(this, "El total es "+resp,"Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bCalcular3ActionPerformed
 
     private void bImprimir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bImprimir6ActionPerformed
         // TODO add your handling code here:
+        try{
+        String resp = fOr.Fibonacci();
+        JOptionPane.showMessageDialog(this, "Primeros 6 digitos de la serie de Fibonacci: "+resp,"Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bImprimir6ActionPerformed
 
     private void bCalcular5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular5ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:\
+        try{
+        int resp = fOr.Pares100();
+        JOptionPane.showMessageDialog(this, "Pares de 1 a 100: "+resp,"Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bCalcular5ActionPerformed
 
 
