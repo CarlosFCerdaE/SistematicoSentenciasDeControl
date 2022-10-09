@@ -336,9 +336,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCalcular4ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lEjer5">
       <Properties>
@@ -358,9 +355,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCalcular5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lEjer6">
       <Properties>
@@ -380,9 +374,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVerificar6ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lEjer7">
       <Properties>
@@ -402,9 +393,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVerificar7ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lEjer8">
       <Properties>
@@ -422,9 +410,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVerificar8ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="tfCadena1">
     </Component>
@@ -441,9 +426,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCalcular9ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lvs8">
       <Properties>

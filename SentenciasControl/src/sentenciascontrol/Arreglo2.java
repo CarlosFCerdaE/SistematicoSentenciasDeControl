@@ -5,16 +5,11 @@
  */
 package sentenciascontrol;
 
-import java.util.Arrays;
-import javax.swing.JOptionPane;
-import modelos.MArreglo2;
-
 /**
  *
  * @author José Alejandro Durán
  */
 public class Arreglo2 extends javax.swing.JInternalFrame{
-    MArreglo2 Arreglo2 = new MArreglo2();
 
     /**
      * Creates new form Arreglo2
@@ -52,11 +47,6 @@ public class Arreglo2 extends javax.swing.JInternalFrame{
         lMultiplicar.setText("Multiplicar por el escalar K: ");
 
         bVerResultado.setText("Ver Resultado");
-        bVerResultado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVerResultadoActionPerformed(evt);
-            }
-        });
 
         lMensaje2.setText("Dada la siguiente matriz B:");
 
@@ -64,11 +54,6 @@ public class Arreglo2 extends javax.swing.JInternalFrame{
         lMatrizb.setText("int[][] matrizB ={{25, -5, 10}, {-10, 21, 54}, {10, -55, -25}};");
 
         bSumarAyB.setText("Suma Matriz A y Matriz B");
-        bSumarAyB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bSumarAyBActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,34 +99,6 @@ public class Arreglo2 extends javax.swing.JInternalFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bVerResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVerResultadoActionPerformed
-        // TODO add your handling code here:
-        try{
-            int k=Integer.parseInt(tfEscalar.getText());
-            int [][] matrizA =Arreglo2.multiplicarEscalar(k);
-            String s = Arrays.deepToString(matrizA).replace("], ", "\n").replaceAll(",|\\[|\\]", " ");
-            JOptionPane.showMessageDialog(this,s);
-        }catch(Exception ex){
-        
-            JOptionPane.showMessageDialog(this, ex.getMessage(),"Respuesta",JOptionPane.INFORMATION_MESSAGE);
-        }
-        tfEscalar.setText("");
-        tfEscalar.grabFocus();
-    }//GEN-LAST:event_bVerResultadoActionPerformed
-
-    private void bSumarAyBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSumarAyBActionPerformed
-        // TODO add your handling code here:
-        try{
-            int [][] matrizC =Arreglo2.sumarMatrices();
-            String s = Arrays.deepToString(matrizC).replace("], ", "\n").replaceAll(",|\\[|\\]", " ");
-            JOptionPane.showMessageDialog(this,s,"Respuesta",JOptionPane.INFORMATION_MESSAGE);
-            
-        }catch(Exception ex){
-        
-            JOptionPane.showMessageDialog(this, ex.getMessage());
-        }
-    }//GEN-LAST:event_bSumarAyBActionPerformed
 
     /**
      * @param args the command line arguments
