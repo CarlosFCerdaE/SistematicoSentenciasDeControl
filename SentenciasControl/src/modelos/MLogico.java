@@ -4,6 +4,8 @@
  */
 package modelos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author labc205

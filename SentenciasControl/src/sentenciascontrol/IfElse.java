@@ -5,11 +5,17 @@
  */
 package sentenciascontrol;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import modelos.MIfElse;
+
 /**
  *
  * @author Armando J. López L.
  */
 public class IfElse extends javax.swing.JInternalFrame {
+
+    MIfElse ifElse = new MIfElse();
 
     /**
      * Creates new form IfElse
@@ -85,6 +91,11 @@ public class IfElse extends javax.swing.JInternalFrame {
         chbSanJuan.setText("San Juan del Sur");
 
         bMostrar2.setText("Mostrar");
+        bMostrar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrar2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pLugaresVisitadosLayout = new javax.swing.GroupLayout(pLugaresVisitados);
         pLugaresVisitados.setLayout(pLugaresVisitadosLayout);
@@ -112,7 +123,7 @@ public class IfElse extends javax.swing.JInternalFrame {
                 .addComponent(chbIsland)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chbSanJuan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bMostrar2))
         );
 
@@ -130,6 +141,11 @@ public class IfElse extends javax.swing.JInternalFrame {
         rbOtro.setText("Otro");
 
         bMostrar1.setText("Mostrar");
+        bMostrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pEstadoCivilLayout = new javax.swing.GroupLayout(pEstadoCivil);
         pEstadoCivil.setLayout(pEstadoCivilLayout);
@@ -155,43 +171,88 @@ public class IfElse extends javax.swing.JInternalFrame {
                 .addComponent(rbCasado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbOtro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bMostrar1))
         );
 
         lEjer3.setText("3. Muestre un mensaje con el estado del botón");
 
         tbOpcion.setText("Opción A");
+        tbOpcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbOpcionActionPerformed(evt);
+            }
+        });
 
         lEjer4.setText("4. Valide la mayoría de edad (>=21 años)");
 
         bValidar4.setText("Validar");
+        bValidar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bValidar4ActionPerformed(evt);
+            }
+        });
 
         lEjer5.setText("5. Valide si el número es una calificación válida (0 - 100)");
 
         bValidar5.setText("Validar");
+        bValidar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bValidar5ActionPerformed(evt);
+            }
+        });
 
         bMostrar3.setText("Mostrar");
+        bMostrar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrar3ActionPerformed(evt);
+            }
+        });
 
         lEjer6.setText("6. Valide si la calificación es aprobada o reprobada");
 
         bValidar6.setText("Validar");
+        bValidar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bValidar6ActionPerformed(evt);
+            }
+        });
 
         lEjer7.setText("7. Valide si el año es bisiesto");
 
         bValidar7.setText("Validar");
+        bValidar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bValidar7ActionPerformed(evt);
+            }
+        });
 
         lEjer8.setText("8. Calcule el mayor de los números");
 
         bCalcular8.setText("Calcular");
+        bCalcular8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCalcular8ActionPerformed(evt);
+            }
+        });
 
         lEjer9.setText("9. Calcule la cantidad de días del mes");
 
         bCalcular9.setText("Calcular");
+        bCalcular9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCalcular9ActionPerformed(evt);
+            }
+        });
 
         lEjer10.setText("10. Muestre el reconocimiento según la calificación (E, MB, B, D)");
 
         bMostrar10.setText("Mostrar");
+        bMostrar10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrar10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -335,6 +396,141 @@ public class IfElse extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bMostrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrar1ActionPerformed
+        // TODO add your handling code here:
+        if (rbSoltero.isSelected())
+            JOptionPane.showMessageDialog(this, "Soltero", "Estado Civil", JOptionPane.INFORMATION_MESSAGE);
+
+        else if (rbCasado.isSelected())
+            JOptionPane.showMessageDialog(this, "Casado", "Estado Civil", JOptionPane.INFORMATION_MESSAGE);
+
+        else if (rbOtro.isSelected())
+            JOptionPane.showMessageDialog(this, "Otro", "Estado Civil", JOptionPane.INFORMATION_MESSAGE);
+
+        else
+            JOptionPane.showMessageDialog(this, "No se ha seleccionado ninguna opcion", "Estado Civil", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_bMostrar1ActionPerformed
+
+    private void bMostrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrar2ActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> visitar = new ArrayList<>();
+
+        if (chbOmetepe.isSelected()) {
+            visitar.add("Ometepe");
+        }
+        if (chbLaguna.isSelected()) {
+            visitar.add("Laguna de Apoyo");
+        }
+        if (chbIsland.isSelected()) {
+            visitar.add("Corn Island");
+        }
+        if (chbSanJuan.isSelected()) {
+            visitar.add("San Juan del Sur");
+        }
+        if (visitar.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, visitar.toArray(), "Lugares a visitar: ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
+    }//GEN-LAST:event_bMostrar2ActionPerformed
+
+    private void tbOpcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbOpcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbOpcionActionPerformed
+
+    private void bMostrar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrar3ActionPerformed
+        // TODO add your handling code here:
+        if (tbOpcion.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Seleccionado", "Estado", JOptionPane.INFORMATION_MESSAGE);
+        } else
+            JOptionPane.showMessageDialog(this, "No seleccionado", "Estado", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_bMostrar3ActionPerformed
+
+    private void bValidar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bValidar4ActionPerformed
+        // TODO add your handling code here:
+        int edad = Integer.parseInt(tfNum1.getText());
+        boolean mayor = ifElse.mayorEdad(edad);
+        try {
+            if (mayor) {
+                JOptionPane.showMessageDialog(this, "Es mayor de edad", "Edad", JOptionPane.INFORMATION_MESSAGE);
+            } else if (!mayor && edad > 0) {
+                JOptionPane.showMessageDialog(this, "Es menor de edad", "Edad", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Edad Inválida", "Edad", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception ex){
+            JOptionPane.showMessageDialog(this,ex.getMessage());
+        }
+    }//GEN-LAST:event_bValidar4ActionPerformed
+
+    private void bValidar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bValidar5ActionPerformed
+        // TODO add your handling code here:
+        int nota = Integer.parseInt(tfNum2.getText());
+        boolean valido = ifElse.notaValida(nota);
+        if (valido) {
+            JOptionPane.showMessageDialog(this, "Nota válida", "Nota", JOptionPane.INFORMATION_MESSAGE);
+        } else
+            JOptionPane.showMessageDialog(this, "Nota inválida", "Nota", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bValidar5ActionPerformed
+
+    private void bValidar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bValidar6ActionPerformed
+        // TODO add your handling code here:
+        
+        int notaValidar = Integer.parseInt(tfNum3.getText());
+        boolean validar = ifElse.validarNota(notaValidar);
+        if(validar){
+            JOptionPane.showMessageDialog(this, "Nota Aprobada", "Nota", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Nota Reprobada", "Nota", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bValidar6ActionPerformed
+
+    private void bValidar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bValidar7ActionPerformed
+        // TODO add your handling code here:
+        int year = Integer.parseInt(tfNum4.getText());
+        boolean bisiesto = ifElse.validarAnio(year);
+        
+        if(bisiesto){
+            JOptionPane.showMessageDialog(this, "Es bisiesto", "Año", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+            JOptionPane.showMessageDialog(this, "No es bisiesto", "Año", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bValidar7ActionPerformed
+
+    private void bCalcular8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular8ActionPerformed
+        // TODO add your handling code here:
+        int n1=Integer.parseInt(tfNum5.getText());
+        int n2=Integer.parseInt(tfNum6.getText());
+        int n3=Integer.parseInt(tfNum7.getText());
+        int n4=Integer.parseInt(tfNum8.getText());
+        int validar = ifElse.mayorNum(n1, n2, n3, n4);
+        
+        JOptionPane.showMessageDialog(this, "El número mayor es: "+validar, "Número", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bCalcular8ActionPerformed
+
+    private void bCalcular9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular9ActionPerformed
+        // TODO add your handling code here:
+        int dia = Integer.parseInt(tfNum9.getText());
+        int mes = ifElse.diaMes(dia);
+        if(mes != 0)
+        JOptionPane.showMessageDialog(this, "El numero de dias es:  "+mes, "Mes", JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(this, "Mes no válido", "Mes", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bCalcular9ActionPerformed
+
+    private void bMostrar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrar10ActionPerformed
+        // TODO add your handling code here:
+        int nota = Integer.parseInt(tfNum10.getText());
+        String calfNota = ifElse.verNotas(nota);
+        if(calfNota != "I")
+        JOptionPane.showMessageDialog(this, "Su nota es :  "+calfNota, "Notas", JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(this, "Nota inválida", "Notas", JOptionPane.INFORMATION_MESSAGE);
+        
+    }//GEN-LAST:event_bMostrar10ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
