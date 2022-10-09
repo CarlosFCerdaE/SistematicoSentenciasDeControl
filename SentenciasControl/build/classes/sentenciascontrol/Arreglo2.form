@@ -94,9 +94,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver Resultado"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVerResultadoActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lMensaje2">
       <Properties>
@@ -115,9 +112,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Suma Matriz A y Matriz B"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSumarAyBActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>
