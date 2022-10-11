@@ -5,11 +5,21 @@
  */
 package sentenciascontrol;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import modelos.MWhile;
+
 /**
  *
  * @author Armando J. López L.
  */
 public class While extends javax.swing.JInternalFrame {
+
+    MWhile While = new MWhile();
+    ArrayList<Double> decimales = new ArrayList<>();
+    ArrayList<Integer> calificaciones = new ArrayList<>();
+    ArrayList<Double> cuotas = new ArrayList<>();
+    public int saldo = 1000;
 
     /**
      * Creates new form While
@@ -201,27 +211,97 @@ public class While extends javax.swing.JInternalFrame {
 
     private void bVerificar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVerificar3ActionPerformed
         // TODO add your handling code here:
+        try {
+            int num = Integer.parseInt(tfNum3.getText());
+            int perf = While.numPerfecto(num);
+            if (num == perf) {
+                JOptionPane.showMessageDialog(this, "El número es perfecto",
+                        "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "El número no es perfecto",
+                        "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bVerificar3ActionPerformed
 
     private void bSumar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSumar2ActionPerformed
         // TODO add your handling code here:
+
+        try {
+            double numero = Double.parseDouble(tfNum2.getText());
+            decimales.add(numero);
+            if (numero != -1) {
+                tfNum2.setText("");
+            } else {
+                tfNum2.setText("");
+                JOptionPane.showMessageDialog(this, "La suma es: " + While.sumar(decimales),
+                        "Resultado", JOptionPane.INFORMATION_MESSAGE);
+
+                decimales.clear();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_bSumar2ActionPerformed
 
     private void bContar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bContar4ActionPerformed
-        try{
+        try {
+            int calif = Integer.parseInt(tfCali4.getText());
 
-        }
-        catch(NumberFormatException ex){
+            calificaciones.add(calif);
+            tfCali4.setText("");
 
+            if (calif == -1) {
+                int cant = While.cantidad(calificaciones);
+                JOptionPane.showMessageDialog(this, "Cantidad de aprobados: "
+                        + "" + cant, "Aprobados", JOptionPane.INFORMATION_MESSAGE);
+                tfCali4.setText("");
+                calificaciones.clear();
+            }
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
+
+
     }//GEN-LAST:event_bContar4ActionPerformed
 
     private void bCalcular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCalcular1ActionPerformed
         // TODO add your handling code here:
+        try {
+            String texto = tfOracion1.getText();
+            int i = While.cantVocales(texto);
+            JOptionPane.showMessageDialog(this, "La cantidad de vocales es " + i,
+                    "Cantidad de Vocales", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_bCalcular1ActionPerformed
 
     private void bPagar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPagar5ActionPerformed
         // TODO add your handling code here:
+
+        try {
+            double cuota = Double.parseDouble(tfCuota5.getText());
+            cuotas.add(cuota);
+            saldo -= cuota;
+            if (saldo <= 0) {
+                JOptionPane.showMessageDialog(this, "Deuda saldada en "
+                        + While.cantCuota(cuotas) + " pagos", "Pagos",
+                        JOptionPane.INFORMATION_MESSAGE);
+                saldo = 1000;
+                cuotas.clear();
+            } else {
+                tfCuota5.setText("");
+            }
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+
+
     }//GEN-LAST:event_bPagar5ActionPerformed
 
 
